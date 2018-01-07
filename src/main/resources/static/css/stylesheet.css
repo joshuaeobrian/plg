@@ -1,0 +1,20 @@
+nav {
+  background: cadetblue; }
+
+.container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: repeat(3, 1fr)/repeat(2, 1fr);
+  grid-gap: 5px; }
+  .container div {
+    height: 100px;
+    background: grey; }
+
+header {
+  background: #D3D4D9; }
+
+footer {
+  background: #252627;
+  color: #FFF9FB; }
+
+/*# sourceMappingURL=stylesheet.css.map */

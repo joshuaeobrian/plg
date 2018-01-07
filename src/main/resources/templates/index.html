@@ -2,29 +2,68 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <title>Title</title>
     <link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>
 </head>
 <body>
-<p>This is the HomePage</p>
-<h3>Hello,</h3>
-<div th:if="${Customer != null}">
-    <p><span th:text="|${Customer.firstName} ${Customer.lastName}|"></span></p>
-    <!--<p><span th:text="${Customer.lastName}"></span></p>-->
-    <h1>YO</h1>
-</div>
 
-<div>
-    <a th:href="@{/about}">About</a>
+<header>
+    <nav>
+        <div>
+            <a th:href="@{/about}">About</a>
+        </div>
+        <a th:href="@{/signup}">Sign up</a>
+        <div>
+            <a th:href="@{/timeline}">Timeline</a>
+        </div>
+        <a th:href="@{/emplogin}">Employee Login</a>
+        <div>
+            <a th:href="@{/custlogin}">Customer Login</a>
+        </div>
+    </nav>
+    <hr/>
+</header>
+
+
+<div class="container">
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
 </div>
-    <a th:href="@{/signup}">Sign up</a>
-<div>
-    <a th:href="@{/timeline}">Timeline</a>
-</div>
-    <a th:href="@{/emplogin}">Employee Login</a>
-<div>
-    <a th:href="@{/custlogin}">Customer Login</a>
-</div>
+<footer>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p>copyright</p>
+</footer>
 
 </body>
 </html>

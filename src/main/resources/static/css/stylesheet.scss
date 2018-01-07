@@ -1,0 +1,23 @@
+nav{
+  background: cadetblue;
+}
+.container{
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
+  grid-gap: 5px;
+
+  div{
+    height: 100px;
+    //width: 50%;
+    background: grey;
+    //margin: 5px;
+  }
+}
+header{
+  background: #D3D4D9;
+}
+footer{
+  background: #252627;
+  color:#FFF9FB;
+}
