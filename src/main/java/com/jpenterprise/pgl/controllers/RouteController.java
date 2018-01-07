@@ -41,6 +41,11 @@ public class RouteController {
         return "emplogin";
     }
 
+    @GetMapping("/custlogin")
+    public String getCustLogin(){
+        return "custlogin";
+    }
+
     @PostMapping("/create")
     public String createCust(Customer customer) {
         this.customer= customer.getUsername();
