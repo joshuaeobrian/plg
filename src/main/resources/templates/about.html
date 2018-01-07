@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layout :: head('About')">
     <meta charset="UTF-8"/>
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>
 </head>
 <body>
+
 <header th:replace="index :: header">
 
 </header>
 <h1>MOTHER FUCKING ABOUT</h1>
-<p>This is the about page</p>
 
+<header th:replace="layout ::header"></header>
+<h1>This is the About Page</h1>
+
+<p>This is the about page</p>
 <a th:href="@{/}">Go Back</a>
+<footer th:replace="layout ::footer"></footer>
+
 </body>
 </html>
