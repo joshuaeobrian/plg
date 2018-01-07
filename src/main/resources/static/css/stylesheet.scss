@@ -1,7 +1,14 @@
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 nav{
-  background: cadetblue;
+
 }
 .container{
+  margin-top: 50px;
   display: grid;
   grid-auto-flow: column;
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
@@ -15,8 +22,36 @@ nav{
   }
 }
 header{
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 150px;
+  left: 0;
+  top: 0;
   background: #D3D4D9;
+  a, div{
+    display: inline-block;
+  }
 }
+#account{
+  margin-bottom:0;
+}
+#account-list{
+  background: whitesmoke;
+  box-shadow: 0 1px 1px 1px rgba(0,0,0, 1);
+  margin-top: 0;
+  width: 100px;
+  padding: 5px;
+  //margin-left: 0;
+  list-style: none;
+
+}
+#account-list li{
+  padding-left: 5px;
+  //margin-left: 0;
+  border-bottom: 1px solid lightgray;
+}
+
 footer{
   background: #252627;
   color:#FFF9FB;

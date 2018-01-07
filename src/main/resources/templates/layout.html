@@ -9,19 +9,24 @@
 <body>
 <header th:fragment="header">
     <nav>
-        <div>
-            <a th:href="@{/about}">About</a>
-        </div>
+        <a th:href="@{/about}">About</a>
         <a th:href="@{/signup}">Sign up</a>
-        <div>
-            <a th:href="@{/timeline}">Timeline</a>
-        </div>
+        <a th:href="@{/timeline}">Timeline</a>
         <a th:href="@{/emplogin}">Employee Login</a>
-        <div>
-            <a th:href="@{/custlogin}">Customer Login</a>
+        <a th:href="@{/custlogin}">Customer Login</a>
+
+        <div id="drop-down">
+            <a id="account">Account</a>
+            <ul id="account-list">
+                <li><a>Profile</a></li>
+                <li><a>Profile</a></li>
+                <li><a>Setting</a></li>
+                <li><a>Logout</a></li>
+            </ul>
         </div>
+
     </nav>
-    <hr/>
+
 </header>
 <footer th:fragment="footer">
     <ul>
@@ -39,6 +44,8 @@
         <li></li>
     </ul>
     <p>copyright</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script type="text/javascript" th:src="@{app.js}"></script>
 </footer>
 </body>
 </html>

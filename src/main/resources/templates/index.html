@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header th:fragment="header">
+<header th:replace="layout::header">
     <nav>
         <div>
             <a th:href="@{/about}">About</a>
@@ -47,22 +47,7 @@
 
     </div>
 </div>
-<footer>
-    <ul>
-        <li>TEST1</li>
-        <li>TEST2</li>
-        <li>TEST3</li>
-        <li>Companies</li>
-        <li></li>
-    </ul>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <p>copyright</p>
+<footer th:replace="layout::footer">
 </footer>
 
 </body>
