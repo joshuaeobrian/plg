@@ -31,6 +31,16 @@ public class RouteController {
         return "signup";
     }
 
+    @GetMapping("/timeline")
+    public String getTimeLine(){
+        return "timeline";
+    }
+
+    @GetMapping("/emplogin")
+    public String getEmpLogin(){
+        return "emplogin";
+    }
+
     @PostMapping("/create")
     public String createCust(Customer customer) {
         this.customer= customer.getUsername();
