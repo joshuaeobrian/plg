@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:fragment="head(page_title)">
     <meta charset="UTF-8"/>
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
-    <title>Title</title>
+    <title th:text="${page_title}">Title</title>
     <link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>
 </head>
 <body>
-
 <header th:fragment="header">
     <nav>
         <div>
@@ -24,35 +23,12 @@
     </nav>
     <hr/>
 </header>
-
-
-<div class="container">
-    <div>
-<p>first sentence</p>
-    </div>
-    <div>
-
-    </div>
-    <div>
-
-    </div>
-
-    <div>
-
-    </div>
-    <div>
-
-    </div>
-    <div>
-
-    </div>
-</div>
-<footer>
+<footer th:fragment="footer">
     <ul>
-        <li>TEST1</li>
-        <li>TEST2</li>
-        <li>TEST3</li>
-        <li>Companies</li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
         <li></li>
     </ul>
     <ul>
@@ -64,6 +40,5 @@
     </ul>
     <p>copyright</p>
 </footer>
-
 </body>
 </html>

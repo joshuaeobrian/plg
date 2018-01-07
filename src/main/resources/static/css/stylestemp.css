@@ -1,9 +1,15 @@
 body {
-    background-color: powderblue;
+    background-color: cadetblue;
 }
 h1 {
-    color: blue;
+    color: #00cc99;
 }
 p {
-    color: red;
+    color: #00cc99;
 }
+footer ul{
+    display:inline-block;
+}
+
+
+
