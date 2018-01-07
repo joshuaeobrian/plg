@@ -2,17 +2,57 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <title>Title</title>
 </head>
 <body>
-<p>This is the HomePage</p>
-<h3>Hello,</h3>
-<div th:if="${Customer != null}">
-    <p><span th:text="${Customer.firstName}"></span></p>
-    <p><span th:text="${Customer.lastName}"></span></p>
-    <h1>YO</h1>
-</div>
+<header>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/about}">About</a>
+        <a th:href="@{/signup}">Sign Up</a>
+    </nav>
+    <hr/>
+</header>
 
+<div class="container">
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+</div>
+<footer>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <p>copyright</p>
+</footer>
 
 </body>
 </html>

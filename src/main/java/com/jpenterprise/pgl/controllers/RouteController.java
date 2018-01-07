@@ -15,9 +15,7 @@ public class RouteController {
     private CustomerRepository customerRepository;
     @GetMapping("/")
     public String getHomePage(Model model){
-       // if(customer != null) {
-            model.addAttribute("Customer", customerRepository.getCustomerByUserName("josh"));
-       // }
+
         return "index";
     }
 
