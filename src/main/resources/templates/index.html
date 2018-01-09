@@ -1,54 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layout :: head('Home')">
     <meta charset="UTF-8"/>
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <title>Title</title>
-    <link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>
+    <!--<link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>-->
 </head>
 <body>
 
-<header th:replace="layout::header">
-    <nav>
-        <div>
-            <a th:href="@{/about}">About</a>
+<header th:replace="layout::header"></header>
+<div id="home" class="container">
+    <div id="current" class="carousel slide" data-ride="carousel" style="margin-top: 20px">
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            <li data-target="#current" data-slide-to="0" class="active"></li>
+            <li data-target="#current" data-slide-to="1"></li>
+            <li data-target="#current" data-slide-to="2"></li>
+        </ul>
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background: darkblue; height: 500px; width: 100%">
+
+            </div>
+            <div class="carousel-item" style="background: chartreuse; height: 500px; width: 100%">
+
+            </div>
+            <div class="carousel-item" style="background: forestgreen; height: 500px; width: 100%">
+
+            </div>
         </div>
-        <a th:href="@{/signup}">Sign up</a>
+
+        <!-- Left and right controls -->
+        <a class="carousel-control-prev" href="#" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+    </div>
+    <div id="new-banner">
+        <span class="title">Breaking News:</span>
+
+    </div>
+    <div class="content">
         <div>
-            <a th:href="@{/timeline}">Timeline</a>
+            <h3>News:</h3>
         </div>
-        <a th:href="@{/emplogin}">Employee Login</a>
         <div>
-            <a th:href="@{/custlogin}">Customer Login</a>
+            <h3>Events:</h3>
         </div>
-    </nav>
-    <hr/>
-</header>
-
-
-<div class="container">
-    <div>
-<p>first sentence</p>
-    </div>
-    <div>
-
-    </div>
-    <div>
+        <div>
+            <h3>Coming Up:</h3>
+        </div>
 
     </div>
 
-    <div>
 
-    </div>
-    <div>
 
-    </div>
-    <div>
 
-    </div>
 </div>
-<footer th:replace="layout::footer">
-</footer>
+
+<footer th:replace="layout::footer"></footer>
 
 </body>
 </html>

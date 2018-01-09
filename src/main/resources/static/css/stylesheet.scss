@@ -1,62 +1,110 @@
+
+//$color1 = #223F39;
+//$color2 = #11211D;
 html, body{
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
-}
-nav{
-
-}
-.container{
-  margin-top: 50px;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template: repeat(3, 1fr) / repeat(2, 1fr);
-  grid-gap: 5px;
-
-  div{
-    height: 100px;
-    //width: 50%;
-    background: grey;
-    //margin: 5px;
-  }
+  background: #2F4858;
 }
 header{
-  position: absolute;
-  margin: 0;
-  width: 100%;
-  height: 150px;
-  left: 0;
+  background: #11211D;
+  color: white;
+  height: 100px;
+  box-shadow: 0 2px 2px 2px rgba(0,0,0,.9);
+  position: fixed;
+  //overflow: hidden;
+  z-index: 1;
   top: 0;
-  background: #D3D4D9;
-  a, div{
-    display: inline-block;
+  width: 100%;
+
+  nav a, div a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+
+  }
+  nav a{
+    margin: 10px 20px;
+
+  }
+  nav{
+    clear: both;
+    float: left;
+    padding-top: 40px;
+  }
+  div{
+    padding-top: 40px;
+    padding-right: 50px;
+    margin-right: 50px;
+    position: relative;
+    float: right;
+    z-index: 1;
+    .drop-down{
+      //overflow: inherit;
+      width: 100px;
+      list-style: none;
+      padding: 5px;
+      background: #11211D;
+      box-shadow: 0 1px 2px 2px rgba(0,0,0,.7);
+      z-index: 1000;
+
+      li:hover{
+        padding: 5px;
+        background: #223F39;
+      }
+
+    }
   }
 }
-#account{
-  margin-bottom:0;
-}
-#account-list{
-  background: whitesmoke;
-  box-shadow: 0 1px 1px 1px rgba(0,0,0, 1);
-  margin-top: 0;
-  width: 100px;
-  padding: 5px;
-  //margin-left: 0;
-  list-style: none;
+#home{
+  margin-top: 8%;
+  width: 100%;
+  #current{
+    //box-shadow: 0 2px 2px 5px rgba(0,0,0,.5);
+    //position: relative;
+    overflow: hidden;
+  }
+  #new-banner{
+    //z-index: 1;
+    box-shadow: 2px 2px 5px 0 rgba(0,0,0,.5);
+    display: block;
+    background: black;
+    height: 50px;
+    width: 50%;
+    margin: 10px auto;
+
+    span.title{
+      text-align: center;
+      color:whitesmoke;
+      margin: 5px 0;
+      padding:5px;
+      align-content: center;
+      width: 50%;
+      font-size: 1.5em;
+
+      background: #33658A;
+
+    }
+  }
+  .content{
+    margin: 5px 0;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+  }
+  .content div{
+
+    width: 98%;
+    background: #11211D;
+    height: 200px;
+    margin: 5px 5px;
+    h3{
+      color:whitesmoke;
+      padding: 7px;
+    }
+  }
+
 
 }
-#account-list li{
-  padding-left: 5px;
-  //margin-left: 0;
-  border-bottom: 1px solid lightgray;
-}
 
-footer{
-  background: #252627;
-  color:#FFF9FB;
-
-}
-footer ul{
-  display: inline-block;
-}

@@ -2,22 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(page_title)">
     <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <title th:text="${page_title}">Title</title>
-    <link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>
+    <!--<link rel="stylesheet" th:href="@{/css/stylestemp.css}"/>-->
 </head>
 <body>
 <header th:fragment="header">
     <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/teams}">Teams</a>
+        <a th:href="@{/Store}">Store</a>
         <a th:href="@{/about}">About</a>
-        <a th:href="@{/signup}">Sign up</a>
-        <a th:href="@{/timeline}">Timeline</a>
-        <a th:href="@{/emplogin}">Employee Login</a>
-        <a th:href="@{/custlogin}">Customer Login</a>
-
-        <div id="drop-down">
+    </nav>
+        <div>
             <a id="account">Account</a>
-            <ul id="account-list">
+            <ul id="account-list" class="drop-down">
                 <li><a>Profile</a></li>
                 <li><a>Profile</a></li>
                 <li><a>Setting</a></li>
@@ -25,7 +25,7 @@
             </ul>
         </div>
 
-    </nav>
+
 
 </header>
 <footer th:fragment="footer">
@@ -44,7 +44,9 @@
         <li></li>
     </ul>
     <p>copyright</p>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script type="text/javascript" th:src="@{app.js}"></script>
 </footer>
 </body>
