@@ -3,7 +3,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: #2F4858; }
+  background: #242734; }
 
 header {
   background: #11211D;
@@ -71,9 +71,14 @@ header {
     width: 98%;
     background: #11211D;
     height: 200px;
-    margin: 5px 5px; }
+    margin: 5px 5px;
+    border-top-right-radius: 120px 100px;
+    border-bottom-left-radius: 120px 100px;
+    box-shadow: 0 1px 2px 3px rgba(0, 0, 0, 0.7);
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px; }
     #home .content div h3 {
       color: whitesmoke;
-      padding: 7px; }
+      padding: 10px; }
 
 /*# sourceMappingURL=stylesheet.css.map */
