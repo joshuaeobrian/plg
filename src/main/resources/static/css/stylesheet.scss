@@ -1,17 +1,21 @@
-
-//$color1 = #223F39;
-//$color2 = #11211D;
+@import "loginForm";
 html, body{
   width: 100%;
   height: 100%;
   margin: 0;
   padding: 0;
   background: #242734;
+  font-family: 'Alegreya', serif;
+
 }
 header{
+  #logo{
+    padding: 15px 20px;
+    margin: 0 15px;
+  }
   background: #11211D;
   color: white;
-  height: 100px;
+  height: 150px;
   box-shadow: 0 2px 2px 2px rgba(0,0,0,.9);
   position: fixed;
   //overflow: hidden;
@@ -34,32 +38,23 @@ header{
     float: left;
     padding-top: 40px;
   }
-  div{
+  #account, #no-account{
+    cursor: pointer;
     padding-top: 40px;
     padding-right: 50px;
     margin-right: 50px;
     position: relative;
     float: right;
     z-index: 1;
-    .drop-down{
-      //overflow: inherit;
-      width: 100px;
-      list-style: none;
-      padding: 5px;
+    button{
       background: #11211D;
-      box-shadow: 0 1px 2px 2px rgba(0,0,0,.7);
-      z-index: 1000;
-
-      li:hover{
-        padding: 5px;
-        background: #223F39;
-      }
-
+      color: white;
     }
+
   }
 }
 #home{
-  margin-top: 8%;
+  margin-top: 160px;
   width: 100%;
   #current{
     //box-shadow: 0 2px 2px 5px rgba(0,0,0,.5);
@@ -69,23 +64,35 @@ header{
   #new-banner{
     //z-index: 1;
     box-shadow: 2px 2px 5px 0 rgba(0,0,0,.5);
-    display: block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     background: black;
     height: 50px;
     width: 50%;
     margin: 10px auto;
-
-    span.title{
+    overflow: hidden;
+    span{
       text-align: center;
       color:whitesmoke;
-      margin: 5px 0;
+      //margin: 5px 0;
       padding:5px;
       align-content: center;
       width: 50%;
       font-size: 1.5em;
-
+      z-index: 100;
       background: #33658A;
+      //position: absolute;
 
+    }
+    p{
+      animation: marquee 15s linear infinite;
+      float: right;
+      color: white;
+      overflow: hidden;
+      @keyframes marquee {
+        0%   { transform: translate(100%, 50%); }
+        100% { transform: translate(-200%, 50%); }
+      }
     }
   }
   .content{
@@ -96,14 +103,13 @@ header{
   .content div{
 
     width: 98%;
-    background: #11211D;
-    height: 200px;
+    //background: #11211D;
+    //height: 200px;
     margin: 5px 5px;
-    border-top-right-radius: 120px 100px;
-    border-bottom-left-radius: 120px 100px;
-    box-shadow: 0 1px 2px 3px rgba(0,0,0,.7);
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    //box-shadow: 0 1px 2px 3px rgba(0,0,0,.7);
 
     h3{
       color:whitesmoke;

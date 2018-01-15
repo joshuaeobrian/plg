@@ -22,7 +22,7 @@ INSERT INTO gender(gender_type) VALUES ('Male');
 INSERT INTO gender(gender_type) VALUES ('Female');
 INSERT INTO gender(gender_type) VALUES ('Other');
 
-create table person(
+create table account(
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(50) NOT NULL,
   last_name VARCHAR(50) NOT NULL,
@@ -34,10 +34,10 @@ create table person(
   creation_date TIMESTAMP NOT NULL DEFAULT now(),
   visible BOOLEAN NOT NULL DEFAULT TRUE
 );
-CREATE UNIQUE INDEX person_id_unique ON person(id);
-CREATE UNIQUE INDEX person_username_unique ON person(username);
-CREATE UNIQUE INDEX person_email_unique ON person(email);
-CREATE UNIQUE INDEX person_unique on person(id,first_name,last_name,email,username);
+CREATE UNIQUE INDEX person_id_unique ON account(id);
+CREATE UNIQUE INDEX person_username_unique ON account(username);
+CREATE UNIQUE INDEX person_email_unique ON account(email);
+CREATE UNIQUE INDEX person_unique on account(id,first_name,last_name,email,username);
 
 CREATE TABLE role(
   id SERIAL PRIMARY KEY NOT NULL,
@@ -59,7 +59,7 @@ CREATE UNIQUE INDEX team_id_unique ON team(id);
 CREATE UNIQUE INDEX team_team_name_unique ON team(team_name);
 
 CREATE TABLE team_player(
-  player_id INT NOT NULL REFERENCES person(id),
+  player_id INT NOT NULL REFERENCES account(id),
   team_id INT NOT NULL REFERENCES team(id),
   role_id INT NOT NULL REFERENCES role(id)
 );

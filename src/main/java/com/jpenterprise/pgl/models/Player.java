@@ -1,22 +1,12 @@
 package com.jpenterprise.pgl.models;
 
-import java.util.ArrayList;
+public class Player extends Account {
 
-public class Player{
-    private String name;
 
     public Player() {
     }
 
-    public Player(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public Player(Integer id, String role, String firstName, String lastName, String email, String username, String password, String gender, String telephone) {
+        super(id, role, firstName, lastName, email, username, password, gender, telephone);
     }
 }

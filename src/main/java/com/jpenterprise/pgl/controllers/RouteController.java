@@ -1,22 +1,68 @@
 package com.jpenterprise.pgl.controllers;
 
 import com.jpenterprise.pgl.models.Customer;
-import com.jpenterprise.pgl.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 public class RouteController {
     private String customer;
-    @Autowired
-    private CustomerRepository customerRepository;
-    @GetMapping("/")
-    public String getHomePage(Model model){
 
+    @GetMapping("/")
+    public String getHomePage(HttpSession session, Model model){
+        Integer userId = 0;
+        boolean isSession = false;
+        if(session.isNew()){
+            session.setAttribute("userId",userId);
+        }else{
+            userId = Integer.parseInt(session.getAttribute("userId").toString());
+            if(userId !=0){
+
+                isSession = true;
+                model.addAttribute("account",session.getAttribute("account"));
+            }
+        }
+        model.addAttribute("isSession", isSession);
         return "index";
+    }
+    @GetMapping("/teams")
+    public String getTeamPage(HttpSession session, Model model){
+        Integer userId = 0;
+        boolean isSession = false;
+        if(session.isNew()){
+            session.setAttribute("userId",userId);
+        }else{
+            userId = Integer.parseInt(session.getAttribute("userId").toString());
+            if(userId !=0){
+
+                isSession = true;
+                model.addAttribute("account",session.getAttribute("account"));
+            }
+        }
+        model.addAttribute("isSession", isSession);
+        return "views/team";
+    }
+    @GetMapping("/store")
+    public String getStorePage(HttpSession session, Model model){
+        Integer userId = 0;
+        boolean isSession = false;
+        if(session.isNew()){
+            session.setAttribute("userId",userId);
+        }else{
+            userId = Integer.parseInt(session.getAttribute("userId").toString());
+            if(userId !=0){
+
+                isSession = true;
+                model.addAttribute("account",session.getAttribute("account"));
+            }
+        }
+        model.addAttribute("isSession", isSession);
+        return "views/team";
     }
 
     @GetMapping("/about")
@@ -24,30 +70,10 @@ public class RouteController {
         return "about";
     }
 
-    @GetMapping("/signup")
-    public String getSignup() {
-        return "signup";
-    }
-
-    @GetMapping("/timeline")
-    public String getTimeLine(){
-        return "timeline";
-    }
-
-    @GetMapping("/emplogin")
-    public String getEmpLogin(){
-        return "emplogin";
-    }
-
-    @GetMapping("/custlogin")
-    public String getCustLogin(){
-        return "custlogin";
-    }
-
-    @PostMapping("/create")
-    public String createCust(Customer customer) {
-        this.customer= customer.getUsername();
-        customerRepository.createNewCustomer(customer);
+    @GetMapping("/logout")
+    public String logout(HttpSession session){
+        session.setAttribute("userId",0);
         return "redirect:/";
     }
+
 }

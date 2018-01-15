@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head(page_title)">
     <meta charset="UTF-8"/>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya|Sedgwick+Ave+Display" rel="stylesheet"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"/>
     <link rel="stylesheet" th:href="@{/css/stylesheet.css}"/>
     <title th:text="${page_title}">Title</title>
@@ -9,45 +10,60 @@
 </head>
 <body>
 <header th:fragment="header">
+    <div id="logo">
+        <h3>Logo</h3>
+    </div>
     <nav>
         <a th:href="@{/}">Home</a>
         <a th:href="@{/teams}">Teams</a>
-        <a th:href="@{/Store}">Store</a>
+        <a th:href="@{/store}">Store</a>
         <a th:href="@{/about}">About</a>
     </nav>
-        <div>
-            <a id="account">Account</a>
-            <ul id="account-list" class="drop-down">
-                <li><a>Profile</a></li>
-                <li><a>Profile</a></li>
-                <li><a>Setting</a></li>
-                <li><a>Logout</a></li>
-            </ul>
+
+    <!--/*@thymesVar id="isSession" type="com.jpenterprise.pgl.controllers.RouteController"*/-->
+    <!--<a  th:id="${isSession}? 'account':'no-account'" th:attr="data-toggle=${isSession}? '' : 'modal', data-target=${isSession}? '' : '#login-signup'">-->
+        <!--<span th:text="${isSession}? 'username': 'Login / Sign Up'">Login / Sign Up</span>-->
+        <!--<span>-->
+            <!--<ul id="account-list" class="drop-down">-->
+                <!--<li><a>Profile</a></li>-->
+                <!--<li><a>Profile</a></li>-->
+                <!--<li><a>Setting</a></li>-->
+                <!--<li><a>Logout</a></li>-->
+            <!--</ul>-->
+        <!--</span>-->
+    <!--</a>-->
+    <div id="account" th:id="${isSession}? 'account':'no-account'" class="dropdown">
+        <button  class="btn btn-info dropdown-toggle"
+                 th:class="${isSession}? 'btn dropdown-toggle': 'btn'"
+                 type="button" id="account-btn"
+                 data-toggle="dropdown"
+                 th:attr="data-toggle=${isSession}? 'dropdown' : 'modal', data-target=${isSession}? '' : '#login-signup'"
+                 aria-haspopup="true" aria-expanded="false"
+                 th:text="${isSession}? ${account.username}: 'Login / Sign Up'">
+
+        </button>
+        <div class="dropdown-menu" aria-labelledby="account-btn">
+            <a class="dropdown-item" href="#!">Profile</a>
+            <a class="dropdown-item" href="#!">Team</a>
+            <a class="dropdown-item" href="#!">Achievements</a>
+            <a class="dropdown-item" href="#!">Account Settings</a>
+            <a class="dropdown-item" href="#!" th:href="@{/logout}">Logout</a>
         </div>
+    </div>
+    <!--Modal-->
 
 
 
 </header>
 <footer th:fragment="footer">
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+    <div th:replace="signup :: login-section"></div>
+
     <p>copyright</p>
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script type="text/javascript" th:src="@{app.js}"></script>
+    <script type="text/javascript" th:src="@{./js/login.js}"></script>
 </footer>
 </body>
 </html>

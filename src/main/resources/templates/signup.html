@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:replace="layout :: head('sign')">
     <meta charset="UTF-8"/>
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="/create">
-    <h2>Sign Up</h2>
-<hr/>
-    <input type="hidden" name="id" value="0"/>
-    <input type="text" name="firstName" placeholder="First Name"/>
-    <input type="text" name="lastName" placeholder="Last Name"/>
-    <input type="text" name="email" placeholder="email"/>
-    <input type="text" name="username" placeholder="username"/>
-    <input type="password" name="password" placeholder="password"/>
-    <input type="text" name="gender" placeholder="gender"/>
-    <input type="text" name="telephone" placeholder="telephone"/>
-    <button type="submit">Sign Up!</button>
-<hr/>
+    <button class="btn btn-info" data-toggle="modal" data-target="#login-signup">Login</button>
 
-</form>
+<div th:fragment="login-section" class="modal fade" id="login-signup" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+            </div>
+            <div class="modal-body">
+                <div id="login" style="margin: 10px;">
+                    <form>
+                        <input class="form-control" type="text" name="login" placeholder="Login / Email"/>
+                        <input class="form-control" type="password" name="password" placeholder="Password"/>
+                        <label>Need an Account? <a id="sign-up-link" href="#">Sign-Up</a></label>
+                    </form>
+                </div>
+                <div id="sign-up" style="margin: 10px;">
+                    <form class="row">
+                        <input class="form-control col s3" name="firstName" type="text" placeholder="First Name"/>
+                        <input class="form-control col s3" name="lastName" type="text" placeholder="Last Name"/>
+                        <input class="form-control" type="email" name="email" placeholder="Email"/>
+                        <input class="form-control" type="text" name="username" placeholder="Username"/>
+                        <input class="form-control" type="password" name="password" placeholder="Password"/>
+                        <input class="form-control" type="password" name="confirmPass" placeholder="Confirm Password"/>
+                        <input class="form-control" type="tel" name="phone" placeholder="Phone Number"/>
+                        <select class="form-control" name="gender">
+                            <option>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </form>
 
-<a th:href="@{/}">Go Back</a>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button id="submit-account" class="btn btn-success">Submit</button>
+                <button class="btn btn-danger" data-toggle="modal" data-target="#login-signup">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer th:replace="layout ::footer"></footer>
 </body>
 </html>
